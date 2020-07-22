@@ -12,8 +12,8 @@ docker-push-all:
 git-tag:
 	git tag -a "$(IMAGE_VERSION)" -m "$(IMAGE_VERSION)"
 
-git-push-all:
-	git push && git push --tags
+git-push:
+	git push --follow-tags
 
 .PHONY: docker-build-and-tag docker-push-all
-.PHONY: git-tag git-push-all
+.PHONY: git-tag git-push
